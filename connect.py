@@ -6,7 +6,8 @@ import serial_my
 import serial.tools.list_ports
 import Ui_con_dialog
 import config
-
+import tcp_my
+import socket
 
 
 class Connect_Dialog(QDialog, Ui_con_dialog.Ui_dialog):
@@ -15,14 +16,27 @@ class Connect_Dialog(QDialog, Ui_con_dialog.Ui_dialog):
         self.setupUi(self)
 
         self.serial_con = serial_my.my_serial()
+        # self.tcp_con = tcp_my.tcp_config()
+        
 
         con = config.MyForm()
         self.comboBox_baudrate.setCurrentText(con.baud)
         self.comboBox_databit.setCurrentText(con.databit)
 
+  
+        self.IP_reget.clicked.connect(self.get_home_ip)
+
         self.pushButton_check.clicked.connect(self.check_port)
         self.pushButton_connect.clicked.connect(self.connect_port)
         self.pushButton_disconnect.clicked.connect(self.disconnect_port)
+
+    def get_home_ip(self):
+        # self.tcp_con = tcp_my.tcp_config()
+        # self.addrs = socket.getaddrinfo(socket.gethostname(),None)
+        # self.home_IP.setText(str(self.addrs))
+        add_string = tcp_my.tcp_config.tcp_host(self)
+        self.home_IP.setText(str(add_string))
+
 
     def disconnect_port(self):
         self.serial_con.ser.close()
