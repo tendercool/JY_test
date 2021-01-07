@@ -30,6 +30,13 @@ class Connect_Dialog(QDialog, Ui_con_dialog.Ui_dialog):
         self.pushButton_connect.clicked.connect(self.connect_port)
         self.pushButton_disconnect.clicked.connect(self.disconnect_port)
 
+        self.btn_connect_IP.clicked.connect(self.ip_connect)
+
+    def ip_connect(self):
+        ip = self.aim_IP.text()
+        port = self.aim_port.text()
+        tcp_my.tcp_config.tcp_confirm(self,ip,port)
+
     def get_home_ip(self):
         # self.tcp_con = tcp_my.tcp_config()
         # self.addrs = socket.getaddrinfo(socket.gethostname(),None)
