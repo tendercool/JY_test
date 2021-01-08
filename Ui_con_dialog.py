@@ -15,6 +15,7 @@ class Ui_dialog(object):
     def setupUi(self, dialog):
         dialog.setObjectName("dialog")
         dialog.setFixedSize(500, 300)
+        
         dialog.setMinimumSize(QtCore.QSize(400, 300))
         dialog.setMaximumSize(QtCore.QSize(800, 600))
         self.gridLayout_3 = QtWidgets.QGridLayout(dialog)
@@ -140,7 +141,7 @@ class Ui_dialog(object):
 
     def retranslateUi(self, dialog):
         _translate = QtCore.QCoreApplication.translate
-        dialog.setWindowTitle(_translate("dialog", "Dialog"))
+        dialog.setWindowTitle(_translate("dialog", "设置"))
         self.label_7.setText(_translate("dialog", "停止位：     "))
         self.label_6.setText(_translate("dialog", "校验位：    "))
         self.label_3.setText(_translate("dialog", "串口号："))

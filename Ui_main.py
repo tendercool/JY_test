@@ -14,12 +14,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(796, 591)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 796, 26))
         self.menubar.setObjectName("menubar")
         self.menu = QtWidgets.QMenu(self.menubar)
         self.menu.setObjectName("menu")
@@ -29,7 +29,10 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
         self.actionstart = QtWidgets.QAction(MainWindow)
         self.actionstart.setObjectName("actionstart")
+        self.actioninfor = QtWidgets.QAction(MainWindow)
+        self.actioninfor.setObjectName("actioninfor")
         self.menu.addAction(self.actionstart)
+        self.menu.addAction(self.actioninfor)
         self.menubar.addAction(self.menu.menuAction())
 
         self.retranslateUi(MainWindow)
@@ -38,5 +41,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.menu.setTitle(_translate("MainWindow", "连接"))
+        self.menu.setTitle(_translate("MainWindow", "连接设置"))
         self.actionstart.setText(_translate("MainWindow", "连接配置"))
+        self.actioninfor.setText(_translate("MainWindow", "详细报文"))

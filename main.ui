@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>796</width>
+    <height>591</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,15 +19,16 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>796</width>
      <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
     <property name="title">
-     <string>连接</string>
+     <string>连接设置</string>
     </property>
     <addaction name="actionstart"/>
+    <addaction name="actioninfor"/>
    </widget>
    <addaction name="menu"/>
   </widget>
@@ -35,6 +36,11 @@
   <action name="actionstart">
    <property name="text">
     <string>连接配置</string>
+   </property>
+  </action>
+  <action name="actioninfor">
+   <property name="text">
+    <string>详细报文</string>
    </property>
   </action>
  </widget>

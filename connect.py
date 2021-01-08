@@ -16,7 +16,7 @@ class Connect_Dialog(QDialog, Ui_con_dialog.Ui_dialog):
         self.setupUi(self)
 
         self.serial_con = serial_my.my_serial()
-        # self.tcp_con = tcp_my.tcp_config()
+        self.tcp_con = tcp_my.tcp_config()
         
 
         con = config.MyForm()
@@ -31,18 +31,25 @@ class Connect_Dialog(QDialog, Ui_con_dialog.Ui_dialog):
         self.pushButton_disconnect.clicked.connect(self.disconnect_port)
 
         self.btn_connect_IP.clicked.connect(self.ip_connect)
+        self.btn_disconnect_IP.clicked.connect(self.ip_close)
+
+    def ip_close(self):
+        self.tcp_con.tcp_stop()
+        QMessageBox.information(self,'提示','已断开网络！')
 
     def ip_connect(self):
-        ip = self.aim_IP.text()
-        port = self.aim_port.text()
-        tcp_my.tcp_config.tcp_confirm(self,ip,port)
+        if self.aim_port.text() != '' or self.aim_IP.text() != '':
+            ip = self.aim_IP.text()
+            port = self.aim_port.text()
+            self.tcp_con.tcp_confirm(ip,port)
+        else:
+            QMessageBox.warning(self,'错误','IP及端口不能为空！')
+
 
     def get_home_ip(self):
-        # self.tcp_con = tcp_my.tcp_config()
-        # self.addrs = socket.getaddrinfo(socket.gethostname(),None)
-        # self.home_IP.setText(str(self.addrs))
-        add_string = tcp_my.tcp_config.tcp_host(self)
-        self.home_IP.setText(str(add_string))
+        self.home_IP.clear()
+        self.home_IP.setText(str(self.tcp_con.tcp_host()))
+    
 
 
     def disconnect_port(self):
