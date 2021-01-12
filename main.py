@@ -8,19 +8,18 @@ import Ui_con_dialog
 import con_msg
 import serial_my
 
-class main_window(QMainWindow,Ui_main.Ui_MainWindow,Ui_con_dialog.Ui_dialog):
+
+class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
     def __init__(self):
         super().__init__()
-        self.setFixedSize(1300,600)
+        self.setFixedSize(1300, 600)
         self.setupUi(self)
         self.dia = connect.Connect_Dialog()
         self.msg = con_msg.msg_config()
 
         self.actionstart.triggered.connect(self.dia.show)
         self.actioninfor.triggered.connect(self.msg.show)
-        
-        # self.actionshow_main.triggered.connect(win.show)
-        # self.actionclose_main.triggered.connect(win.close)
+
         self.btn_2KM_on.clicked.connect(self.btn_2KM_on_cb)
         self.btn_2KM_off.clicked.connect(self.btn_2KM_off_cb)
         self.btn_3KM_on.clicked.connect(self.btn_3KM_on_cb)
@@ -37,6 +36,8 @@ class main_window(QMainWindow,Ui_main.Ui_MainWindow,Ui_con_dialog.Ui_dialog):
         self.btn_8QF_off.clicked.connect(self.btn_8QF_off_cb)
         self.btn_9QF_on.clicked.connect(self.btn_9QF_on_cb)
         self.btn_9QF_off.clicked.connect(self.btn_9QF_off_cb)
+        self.btn_city_on.clicked.connect(self.btn_city_on_cb)
+        self.btn_city_off.clicked.connect(self.btn_city_off_cb)
 
         self.btn_2KM_on.setEnabled(True)
         self.btn_2KM_off.setEnabled(False)
@@ -50,8 +51,8 @@ class main_window(QMainWindow,Ui_main.Ui_MainWindow,Ui_con_dialog.Ui_dialog):
         self.btn_7KM_off.setEnabled(False)
         self.btn_diesel_on.setEnabled(True)
         self.btn_diesel_off.setEnabled(False)
-
-  
+        self.btn_city_on.setEnabled(True)
+        self.btn_city_off.setEnabled(False)
 
     def check_2KM_value(self):
         if self.btn_2KM_on.isEnabled():
@@ -60,17 +61,18 @@ class main_window(QMainWindow,Ui_main.Ui_MainWindow,Ui_con_dialog.Ui_dialog):
             return 0
 
     def btn_2KM_on_cb(self):
-        reply = QMessageBox.question(self,'提示','是否打开2KM接口',QMessageBox.Yes | QMessageBox.No)
+        reply = QMessageBox.question(self, '提示', '是否打开2KM接口',
+                                     QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.btn_2KM_on.setEnabled(False)
             self.btn_2KM_off.setEnabled(True)
             self.PCS_signal_led.setPixmap(QPixmap('image/green_pic.png'))
         else:
             pass
-       
-    
+
     def btn_2KM_off_cb(self):
-        reply = QMessageBox.question(self,'提示','是否关闭2KM接口',QMessageBox.Yes | QMessageBox.No)
+        reply = QMessageBox.question(self, '提示', '是否关闭2KM接口',
+                                     QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.btn_2KM_on.setEnabled(True)
             self.btn_2KM_off.setEnabled(False)
@@ -81,9 +83,11 @@ class main_window(QMainWindow,Ui_main.Ui_MainWindow,Ui_con_dialog.Ui_dialog):
     def btn_3KM_on_cb(self):
         PCS_2KM_state = self.check_2KM_value()
         if PCS_2KM_state == 1:
-            QMessageBox.warning(self,'警告','请先打开2KM')
+            QMessageBox.warning(self, '警告', '请先打开2KM')
         else:
-            reply = QMessageBox.question(self,'提示','是否打开3KM光伏接口',QMessageBox.Yes | QMessageBox.No,QMessageBox.Yes)
+            reply = QMessageBox.question(self, '提示', '是否打开3KM光伏接口',
+                                         QMessageBox.Yes | QMessageBox.No,
+                                         QMessageBox.Yes)
             if reply == QMessageBox.Yes:
                 self.btn_3KM_on.setEnabled(False)
                 self.btn_3KM_off.setEnabled(True)
@@ -93,9 +97,10 @@ class main_window(QMainWindow,Ui_main.Ui_MainWindow,Ui_con_dialog.Ui_dialog):
                 self.PV_Q_val.setText('500')
             else:
                 pass
-    
+
     def btn_3KM_off_cb(self):
-        reply = QMessageBox.question(self,'提示','是否关闭3KM光伏接口',QMessageBox.Yes | QMessageBox.No)
+        reply = QMessageBox.question(self, '提示', '是否关闭3KM光伏接口',
+                                     QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.btn_3KM_on.setEnabled(True)
             self.btn_3KM_off.setEnabled(False)
@@ -107,7 +112,8 @@ class main_window(QMainWindow,Ui_main.Ui_MainWindow,Ui_con_dialog.Ui_dialog):
             pass
 
     def btn_5KM_on_cb(self):
-        reply = QMessageBox.question(self,'提示','是否打开5KM负荷1接口',QMessageBox.Yes | QMessageBox.No)
+        reply = QMessageBox.question(self, '提示', '是否打开5KM负荷1接口',
+                                     QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.btn_5KM_on.setEnabled(False)
             self.btn_5KM_off.setEnabled(True)
@@ -116,9 +122,10 @@ class main_window(QMainWindow,Ui_main.Ui_MainWindow,Ui_con_dialog.Ui_dialog):
             self.load1_Q_val.setText('500')
         else:
             pass
-    
+
     def btn_5KM_off_cb(self):
-        reply = QMessageBox.information(self,'提示','是否关闭5KM负荷1接口',QMessageBox.Yes | QMessageBox.No)
+        reply = QMessageBox.information(self, '提示', '是否关闭5KM负荷1接口',
+                                        QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.btn_5KM_on.setEnabled(True)
             self.btn_5KM_off.setEnabled(False)
@@ -129,7 +136,8 @@ class main_window(QMainWindow,Ui_main.Ui_MainWindow,Ui_con_dialog.Ui_dialog):
             pass
 
     def btn_6KM_on_cb(self):
-        reply = QMessageBox.information(self,'提示','是否打开6KM负荷1接口',QMessageBox.Yes | QMessageBox.No)
+        reply = QMessageBox.information(self, '提示', '是否打开6KM负荷1接口',
+                                        QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.btn_6KM_on.setEnabled(False)
             self.btn_6KM_off.setEnabled(True)
@@ -138,9 +146,10 @@ class main_window(QMainWindow,Ui_main.Ui_MainWindow,Ui_con_dialog.Ui_dialog):
             self.load2_Q_val.setText('500')
         else:
             pass
-    
+
     def btn_6KM_off_cb(self):
-        reply = QMessageBox.information(self,'提示','是否关闭6KM负荷1接口',QMessageBox.Yes | QMessageBox.No)
+        reply = QMessageBox.information(self, '提示', '是否关闭6KM负荷1接口',
+                                        QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.btn_6KM_on.setEnabled(True)
             self.btn_6KM_off.setEnabled(False)
@@ -149,9 +158,10 @@ class main_window(QMainWindow,Ui_main.Ui_MainWindow,Ui_con_dialog.Ui_dialog):
             self.load2_Q_val.setText('0')
         else:
             pass
-    
+
     def btn_7KM_on_cb(self):
-        reply = QMessageBox.information(self,'提示','是否打开7KM负荷1接口',QMessageBox.Yes | QMessageBox.No)
+        reply = QMessageBox.information(self, '提示', '是否打开7KM负荷1接口',
+                                        QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.btn_7KM_on.setEnabled(False)
             self.btn_7KM_off.setEnabled(True)
@@ -160,9 +170,10 @@ class main_window(QMainWindow,Ui_main.Ui_MainWindow,Ui_con_dialog.Ui_dialog):
             self.load3_Q_val.setText('500')
         else:
             pass
-    
+
     def btn_7KM_off_cb(self):
-        reply = QMessageBox.information(self,'提示','是否关闭7KM负荷1接口',QMessageBox.Yes | QMessageBox.No)
+        reply = QMessageBox.information(self, '提示', '是否关闭7KM负荷1接口',
+                                        QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.btn_7KM_on.setEnabled(True)
             self.btn_7KM_off.setEnabled(False)
@@ -171,38 +182,41 @@ class main_window(QMainWindow,Ui_main.Ui_MainWindow,Ui_con_dialog.Ui_dialog):
             self.load3_Q_val.setText('0')
         else:
             pass
-    
+
     def btn_diesel_on_cb(self):
-        reply = QMessageBox.question(self,'提示','是否打开柴油发动机',QMessageBox.Yes | QMessageBox.No,QMessageBox.Yes)
+        reply = QMessageBox.question(self, '提示', '是否打开柴油发动机',
+                                     QMessageBox.Yes | QMessageBox.No,
+                                     QMessageBox.Yes)
         if reply == QMessageBox.Yes:
             self.btn_diesel_on.setEnabled(False)
             self.btn_diesel_off.setEnabled(True)
-            
-            
+
         else:
             pass
-    
+
     def btn_diesel_off_cb(self):
-        reply = QMessageBox.question(self,'提示','是否关闭柴油发动机',QMessageBox.Yes | QMessageBox.No)
+        reply = QMessageBox.question(self, '提示', '是否关闭柴油发动机',
+                                     QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.btn_diesel_on.setEnabled(True)
             self.btn_diesel_off.setEnabled(False)
-            
-            
+
         else:
             pass
+
     def btn_8QF_on_cb(self):
-        reply = QMessageBox.question(self,'提示','是否打开8QF接口',QMessageBox.Yes | QMessageBox.No)
+        reply = QMessageBox.question(self, '提示', '是否打开8QF接口',
+                                     QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.btn_8QF_on.setEnabled(False)
             self.btn_8QF_off.setEnabled(True)
             self.diesel_signal_led.setPixmap(QPixmap('image/green_pic.png'))
         else:
             pass
-       
-    
+
     def btn_8QF_off_cb(self):
-        reply = QMessageBox.question(self,'提示','是否关闭8QF接口',QMessageBox.Yes | QMessageBox.No)
+        reply = QMessageBox.question(self, '提示', '是否关闭8QF接口',
+                                     QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.btn_8QF_on.setEnabled(True)
             self.btn_8QF_off.setEnabled(False)
@@ -211,17 +225,18 @@ class main_window(QMainWindow,Ui_main.Ui_MainWindow,Ui_con_dialog.Ui_dialog):
             pass
 
     def btn_9QF_on_cb(self):
-        reply = QMessageBox.question(self,'提示','是否打开9QF接口',QMessageBox.Yes | QMessageBox.No)
+        reply = QMessageBox.question(self, '提示', '是否打开9QF接口',
+                                     QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.btn_9QF_on.setEnabled(False)
             self.btn_9QF_off.setEnabled(True)
             self.BMS_signal_led.setPixmap(QPixmap('image/green_pic.png'))
         else:
             pass
-       
-    
+
     def btn_9QF_off_cb(self):
-        reply = QMessageBox.question(self,'提示','是否关闭9QF接口',QMessageBox.Yes | QMessageBox.No)
+        reply = QMessageBox.question(self, '提示', '是否关闭9QF接口',
+                                     QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.btn_9QF_on.setEnabled(True)
             self.btn_9QF_off.setEnabled(False)
@@ -229,6 +244,31 @@ class main_window(QMainWindow,Ui_main.Ui_MainWindow,Ui_con_dialog.Ui_dialog):
         else:
             pass
 
+    def btn_city_on_cb(self):    
+        reply = QMessageBox.question(self, '提示', '是否打开市电接口',
+                                     QMessageBox.Yes | QMessageBox.No)
+        if reply == QMessageBox.Yes:
+            self.btn_city_on.setEnabled(False)
+            self.btn_city_off.setEnabled(True)
+            self.city_voltage_val.setText('220')
+            self.city_current_val.setText('15')
+            self.city_P_val.setText('1000')
+            self.city_Q_val.setText('500')
+        else:
+            pass
+
+    def btn_city_off_cb(self):
+        reply = QMessageBox.information(self, '提示', '是否关闭市电接口',
+                                        QMessageBox.Yes | QMessageBox.No)
+        if reply == QMessageBox.Yes:
+            self.btn_city_on.setEnabled(True)
+            self.btn_city_off.setEnabled(False)
+            self.city_voltage_val.setText('0')
+            self.city_current_val.setText('0')
+            self.ctiy_P_val.setText('0')
+            self.city_Q_val.setText('0')
+        else:
+            pass
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
