@@ -14,15 +14,6 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
         super().__init__()
         self.setFixedSize(1300, 600)
         self.setupUi(self)
-        
-        self.pushButton.setStyleSheet("QPushButton{color:black}"
-            "QPushButton:hover{color:red}"
-            "QPushButton{background-color:lightgreen}"
-            "QPushButton{border:2px}"
-            "QPushButton{border-radius:10px}"
-            "QPushButton{padding:2px 4px}")
-
-
         self.dia = connect.Connect_Dialog()
         self.msg = con_msg.msg_config()
 
