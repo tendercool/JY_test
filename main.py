@@ -14,6 +14,15 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
         super().__init__()
         self.setFixedSize(1300, 600)
         self.setupUi(self)
+        
+        self.pushButton.setStyleSheet("QPushButton{color:black}"
+            "QPushButton:hover{color:red}"
+            "QPushButton{background-color:lightgreen}"
+            "QPushButton{border:2px}"
+            "QPushButton{border-radius:10px}"
+            "QPushButton{padding:2px 4px}")
+
+
         self.dia = connect.Connect_Dialog()
         self.msg = con_msg.msg_config()
 
@@ -49,6 +58,10 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
         self.btn_6KM_off.setEnabled(False)
         self.btn_7KM_on.setEnabled(True)
         self.btn_7KM_off.setEnabled(False)
+        self.btn_8QF_on.setEnabled(True)
+        self.btn_8QF_off.setEnabled(False)
+        self.btn_9QF_on.setEnabled(True)
+        self.btn_9QF_off.setEnabled(False)
         self.btn_diesel_on.setEnabled(True)
         self.btn_diesel_off.setEnabled(False)
         self.btn_city_on.setEnabled(True)
@@ -265,7 +278,7 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
             self.btn_city_off.setEnabled(False)
             self.city_voltage_val.setText('0')
             self.city_current_val.setText('0')
-            self.ctiy_P_val.setText('0')
+            self.city_P_val.setText('0')
             self.city_Q_val.setText('0')
         else:
             pass
