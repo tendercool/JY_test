@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'g:\PyQt\JY_test\main.ui'
+# Form implementation generated from reading ui file 'g:\git\JY_test\main.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.1
 #
@@ -49,7 +49,7 @@ class Ui_MainWindow(object):
         self.gridLayout1.addWidget(self.btn_6KM_on, 7, 15, 1, 1)
         self.BMS_signal_led = QtWidgets.QLabel(self.centralwidget)
         self.BMS_signal_led.setText("")
-        self.BMS_signal_led.setPixmap(QtGui.QPixmap("g:\\PyQt\\JY_test\\image/red_pic.png"))
+        self.BMS_signal_led.setPixmap(QtGui.QPixmap("g:\\git\\JY_test\\image/red_pic.png"))
         self.BMS_signal_led.setObjectName("BMS_signal_led")
         self.gridLayout1.addWidget(self.BMS_signal_led, 11, 13, 1, 1)
         self.label_22 = QtWidgets.QLabel(self.centralwidget)
@@ -111,7 +111,7 @@ class Ui_MainWindow(object):
         self.gridLayout1.addWidget(self.label_16, 5, 11, 1, 3)
         self.PCS_signal_led = QtWidgets.QLabel(self.centralwidget)
         self.PCS_signal_led.setText("")
-        self.PCS_signal_led.setPixmap(QtGui.QPixmap("g:\\PyQt\\JY_test\\image/red_pic.png"))
+        self.PCS_signal_led.setPixmap(QtGui.QPixmap("g:\\git\\JY_test\\image/red_pic.png"))
         self.PCS_signal_led.setObjectName("PCS_signal_led")
         self.gridLayout1.addWidget(self.PCS_signal_led, 11, 5, 1, 1)
         self.btn_diesel_close = QtWidgets.QPushButton(self.centralwidget)
@@ -173,7 +173,7 @@ class Ui_MainWindow(object):
         self.gridLayout1.addWidget(self.load1_current_val, 6, 13, 1, 1)
         self.controller_signal_led = QtWidgets.QLabel(self.centralwidget)
         self.controller_signal_led.setText("")
-        self.controller_signal_led.setPixmap(QtGui.QPixmap("g:\\PyQt\\JY_test\\image/red_pic.png"))
+        self.controller_signal_led.setPixmap(QtGui.QPixmap("g:\\git\\JY_test\\image/red_pic.png"))
         self.controller_signal_led.setObjectName("controller_signal_led")
         self.gridLayout1.addWidget(self.controller_signal_led, 11, 17, 1, 1)
         self.line_12 = QtWidgets.QFrame(self.centralwidget)
@@ -269,7 +269,7 @@ class Ui_MainWindow(object):
         self.gridLayout1.addWidget(self.label_11, 5, 7, 1, 3)
         self.PV_signal_led = QtWidgets.QLabel(self.centralwidget)
         self.PV_signal_led.setText("")
-        self.PV_signal_led.setPixmap(QtGui.QPixmap("g:\\PyQt\\JY_test\\image/red_pic.png"))
+        self.PV_signal_led.setPixmap(QtGui.QPixmap("g:\\git\\JY_test\\image/red_pic.png"))
         self.PV_signal_led.setObjectName("PV_signal_led")
         self.gridLayout1.addWidget(self.PV_signal_led, 11, 1, 1, 1)
         self.btn_6KM_off = QtWidgets.QPushButton(self.centralwidget)
@@ -296,7 +296,7 @@ class Ui_MainWindow(object):
         self.gridLayout1.addWidget(self.label_23, 8, 15, 1, 1)
         self.diesel_signal_led = QtWidgets.QLabel(self.centralwidget)
         self.diesel_signal_led.setText("")
-        self.diesel_signal_led.setPixmap(QtGui.QPixmap("g:\\PyQt\\JY_test\\image/red_pic.png"))
+        self.diesel_signal_led.setPixmap(QtGui.QPixmap("g:\\git\\JY_test\\image/red_pic.png"))
         self.diesel_signal_led.setObjectName("diesel_signal_led")
         self.gridLayout1.addWidget(self.diesel_signal_led, 11, 9, 1, 1)
         self.PV_current_val = QtWidgets.QLineEdit(self.centralwidget)

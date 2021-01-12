@@ -9,13 +9,16 @@ import con_msg
 import serial_my
 
 
+
 class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
     def __init__(self):
         super().__init__()
-        self.setFixedSize(1300, 600)
+        self.setFixedSize(1000, 500)
         self.setupUi(self)
         self.dia = connect.Connect_Dialog()
         self.msg = con_msg.msg_config()
+        with open("style.qss",'r') as f:
+            qApp.setStyleSheet(f.read())
 
         self.actionstart.triggered.connect(self.dia.show)
         self.actioninfor.triggered.connect(self.msg.show)
@@ -87,7 +90,7 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
     def btn_3KM_on_cb(self):
         PCS_2KM_state = self.check_2KM_value()
         if PCS_2KM_state == 1:
-            QMessageBox.warning(self, '警告', '请先打开2KM')
+            QMessageBox.warning(self, '警告', '请先打开2KM')            
         else:
             reply = QMessageBox.question(self, '提示', '是否打开3KM光伏接口',
                                          QMessageBox.Yes | QMessageBox.No,
@@ -278,5 +281,7 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     win = main_window()
     win.show()
+
+
 
     sys.exit(app.exec_())
