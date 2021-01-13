@@ -14,10 +14,70 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
         super().__init__()
         self.setFixedSize(1250, 600)
         self.setupUi(self)
-        self.dia = connect.Connect_Dialog()
-        self.msg = con_msg.msg_config()
         with open("style.qss", 'r') as f:
             qApp.setStyleSheet(f.read())
+
+        self.PV_VAL = [
+            'PV_VAL_1', 'PV_VAL_2', 'PV_VAL_3', 'PV_VAL_4', 'PV_VAL_5',
+            'PV_VAL_6', 'PV_VAL_7', 'PV_VAL_8', 'PV_VAL_9'
+        ]
+        self.DIESEL_VAL = [
+            'DIESEL_VAL_1',
+            'DIESEL_VAL_2',
+            'DIESEL_VAL_3',
+            'DIESEL_VAL_4',
+            'DIESEL_VAL_5',
+            'DIESEL_VAL_6',
+            'DIESEL_VAL_7',
+            'DIESEL_VAL_8',
+            'DIESEL_VAL_9',
+            'DIESEL_VAL_10',
+            'DIESEL_VAL_11',
+            'DIESEL_VAL_12',
+            'DIESEL_VAL_13',
+            'DIESEL_VAL_14',
+            'DIESEL_VAL_15',
+            'DIESEL_VAL_16',
+            'DIESEL_VAL_17',
+            'DIESEL_VAL_18',
+            'DIESEL_VAL_19',
+            'DIESEL_VAL_20',
+            'DIESEL_VAL_21',
+            'DIESEL_VAL_22',
+        ]
+        self.BMS_VAL = [
+            'BMS_VAL_1',
+            'BMS_VAL_2',
+            'BMS_VAL_3',
+            'BMS_VAL_4',
+            'BMS_VAL_5',
+            'BMS_VAL_6',
+            'BMS_VAL_7',
+            'BMS_VAL_8',
+            'BMS_VAL_9',
+            'BMS_VAL_10',
+            'BMS_VAL_11',
+            'BMS_VAL_12',
+            'BMS_VAL_13',
+            'BMS_VAL_14',
+            'BMS_VAL_15',
+            'BMS_VAL_16',
+            'BMS_VAL_17',
+            'BMS_VAL_18',
+            'BMS_VAL_19',
+            'BMS_VAL_20',
+            'BMS_VAL_21',
+            'BMS_VAL_22',
+            'BMS_VAL_23',
+            'BMS_VAL_24',
+            'BMS_VAL_25',
+            'BMS_VAL_26',
+            'BMS_VAL_27',
+            'BMS_VAL_28',
+        ]
+
+        self.dia = connect.Connect_Dialog()
+        self.msg = con_msg.msg_config()
 
         self.actionstart.triggered.connect(self.dia.show)
         self.actioninfor.triggered.connect(self.msg.show)
@@ -147,8 +207,11 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
                 self.PV_current_val.setText('15')
                 self.PV_P_val.setText('1000')
                 self.PV_Q_val.setText('500')
+
+                self.PV_VAL_UPDATE()
             else:
                 pass
+                
 
     def btn_3KM_off_cb(self):
         reply = QMessageBox.question(self, '提示', '是否关闭3KM光伏接口',
@@ -321,7 +384,18 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
             self.city_Q_val.setText('0')
         else:
             pass
-
+  #-------------------------------简单队列测试----------------------
+  #----暂无问题，根据接收报文生成队列，切片，与参数值队列组成字典，顺序赋值。后续考虑以exec函数处理，eval计算字符串
+    def PV_VAL_UPDATE(self):
+        if self.dia.serial_con.ser.isOpen():
+            rec_msg = ['11','EF','CC','AF']
+            if rec_msg != '':
+                PV_dict = dict(zip(self.PV_VAL,rec_msg))
+                print(PV_dict)
+                self.PV_VAL_1.setText(PV_dict['PV_VAL_1'])
+                self.PV_VAL_2.setText(PV_dict['PV_VAL_2'])
+                self.PV_VAL_3.setText(PV_dict['PV_VAL_3'])
+                self.PV_VAL_4.setText(PV_dict['PV_VAL_4'])
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

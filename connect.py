@@ -17,7 +17,7 @@ class Connect_Dialog(QDialog, Ui_con_dialog.Ui_dialog):
 
         self.serial_con = serial_my.my_serial()
         self.tcp_con = tcp_my.tcp_config()
-        
+        self.con_state = 0
 
         con = config.MyForm()
         self.comboBox_baudrate.setCurrentText(con.baud)
@@ -67,6 +67,7 @@ class Connect_Dialog(QDialog, Ui_con_dialog.Ui_dialog):
                 self.comboBox_databit.currentText(),
                 self.comboBox_parity.currentText(),
                 self.comboBox_stopbit.currentText())
+        
 
     def check_port(self):
         self.com_dict = {}
