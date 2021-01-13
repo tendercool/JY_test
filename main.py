@@ -78,6 +78,10 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
 
         self.dia = connect.Connect_Dialog()
         self.msg = con_msg.msg_config()
+        # self.timer = QTimer()
+        # self.timer.start(1000)
+        # self.timer.timeout.connect(self.set_btn)
+        
 
         self.actionstart.triggered.connect(self.dia.show)
         self.actioninfor.triggered.connect(self.msg.show)
@@ -108,6 +112,8 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
         self.actionshow_battery.triggered.connect(self.frame_battery_show)
         self.actionclose_battery.triggered.connect(self.frame_battery_hide)
 
+    # def set_btn(self):
+    #     if self.dia.serial_con.ser.isOpen():
         self.btn_2KM_on.setEnabled(True)
         self.btn_2KM_off.setEnabled(False)
         self.btn_3KM_on.setEnabled(True)
@@ -126,6 +132,25 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
         self.btn_diesel_off.setEnabled(False)
         self.btn_city_on.setEnabled(True)
         self.btn_city_off.setEnabled(False)
+        # else:
+        #     self.btn_2KM_on.setEnabled(False)
+        #     self.btn_2KM_off.setEnabled(False)
+        #     self.btn_3KM_on.setEnabled(False)
+        #     self.btn_3KM_off.setEnabled(False)
+        #     self.btn_5KM_on.setEnabled(False)
+        #     self.btn_5KM_off.setEnabled(False)
+        #     self.btn_6KM_on.setEnabled(False)
+        #     self.btn_6KM_off.setEnabled(False)
+        #     self.btn_7KM_on.setEnabled(False)
+        #     self.btn_7KM_off.setEnabled(False)
+        #     self.btn_8QF_on.setEnabled(False)
+        #     self.btn_8QF_off.setEnabled(False)
+        #     self.btn_9QF_on.setEnabled(False)
+        #     self.btn_9QF_off.setEnabled(False)
+        #     self.btn_diesel_on.setEnabled(False)
+        #     self.btn_diesel_off.setEnabled(False)
+        #     self.btn_city_on.setEnabled(False)
+        #     self.btn_city_off.setEnabled(False)
 
     def frame_PV_hide(self):
         self.frame_main.show()
@@ -388,14 +413,17 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
   #----暂无问题，根据接收报文生成队列，切片，与参数值队列组成字典，顺序赋值。后续考虑以exec函数处理，eval计算字符串
     def PV_VAL_UPDATE(self):
         if self.dia.serial_con.ser.isOpen():
-            rec_msg = ['11','EF','CC','AF']
+            rec_msg = ['11','EF','CC','AF','AD','12','24','25','99']
             if rec_msg != '':
                 PV_dict = dict(zip(self.PV_VAL,rec_msg))
-                print(PV_dict)
-                self.PV_VAL_1.setText(PV_dict['PV_VAL_1'])
-                self.PV_VAL_2.setText(PV_dict['PV_VAL_2'])
-                self.PV_VAL_3.setText(PV_dict['PV_VAL_3'])
-                self.PV_VAL_4.setText(PV_dict['PV_VAL_4'])
+                
+                for key in PV_dict:
+                    print(PV_dict[key])
+                    exec('self.%s.setText("%s")' % (key, PV_dict[key]))
+                # self.PV_VAL_1.setText(PV_dict['PV_VAL_1'])
+                # self.PV_VAL_2.setText(PV_dict['PV_VAL_2'])
+                # self.PV_VAL_3.setText(PV_dict['PV_VAL_3'])
+                # self.PV_VAL_4.setText(PV_dict['PV_VAL_4'])
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
