@@ -9,15 +9,14 @@ import con_msg
 import serial_my
 
 
-
 class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
     def __init__(self):
         super().__init__()
-        self.setFixedSize(1000, 500)
+        self.setFixedSize(1250, 600)
         self.setupUi(self)
         self.dia = connect.Connect_Dialog()
         self.msg = con_msg.msg_config()
-        with open("style.qss",'r') as f:
+        with open("style.qss", 'r') as f:
             qApp.setStyleSheet(f.read())
 
         self.actionstart.triggered.connect(self.dia.show)
@@ -42,6 +41,13 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
         self.btn_city_on.clicked.connect(self.btn_city_on_cb)
         self.btn_city_off.clicked.connect(self.btn_city_off_cb)
 
+        self.actionclose_PV.triggered.connect(self.frame_PV_hide)
+        self.actionshow_PV.triggered.connect(self.frame_PV_show)
+        self.actionshow_diesel.triggered.connect(self.frame_diesel_show)
+        self.actionclose_diesel.triggered.connect(self.frame_diesel_hide)
+        self.actionshow_battery.triggered.connect(self.frame_battery_show)
+        self.actionclose_battery.triggered.connect(self.frame_battery_hide)
+
         self.btn_2KM_on.setEnabled(True)
         self.btn_2KM_off.setEnabled(False)
         self.btn_3KM_on.setEnabled(True)
@@ -60,6 +66,45 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
         self.btn_diesel_off.setEnabled(False)
         self.btn_city_on.setEnabled(True)
         self.btn_city_off.setEnabled(False)
+
+    def frame_PV_hide(self):
+        self.frame_main.show()
+        self.frame_PV.hide()
+        self.frame_diesel.hide()
+        self.frame_battery.hide()
+
+    def frame_PV_show(self):
+        self.frame_main.hide()
+        self.frame_PV.show()
+        self.frame_PV.move(0, 0)
+        self.frame_diesel.hide()
+        self.frame_battery.hide()
+
+    def frame_diesel_show(self):
+        self.frame_main.hide()
+        self.frame_diesel.show()
+        self.frame_diesel.move(0, 0)
+        self.frame_PV.hide()
+        self.frame_battery.hide()
+
+    def frame_diesel_hide(self):
+        self.frame_main.show()
+        self.frame_diesel.hide()
+        self.frame_PV.hide()
+        self.frame_battery.hide()
+
+    def frame_battery_show(self):
+        self.frame_main.hide()
+        self.frame_battery.show()
+        self.frame_battery.move(0, 0)
+        self.frame_PV.hide()
+        self.frame_diesel.hide()
+
+    def frame_battery_hide(self):
+        self.frame_main.show()
+        self.frame_diesel.hide()
+        self.frame_PV.hide()
+        self.frame_battery.hide()
 
     def check_2KM_value(self):
         if self.btn_2KM_on.isEnabled():
@@ -90,7 +135,7 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
     def btn_3KM_on_cb(self):
         PCS_2KM_state = self.check_2KM_value()
         if PCS_2KM_state == 1:
-            QMessageBox.warning(self, '警告', '请先打开2KM')            
+            QMessageBox.warning(self, '警告', '请先打开2KM')
         else:
             reply = QMessageBox.question(self, '提示', '是否打开3KM光伏接口',
                                          QMessageBox.Yes | QMessageBox.No,
@@ -251,7 +296,7 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
         else:
             pass
 
-    def btn_city_on_cb(self):    
+    def btn_city_on_cb(self):
         reply = QMessageBox.question(self, '提示', '是否打开市电接口',
                                      QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
@@ -277,11 +322,10 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
         else:
             pass
 
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     win = main_window()
     win.show()
-
-
 
     sys.exit(app.exec_())
