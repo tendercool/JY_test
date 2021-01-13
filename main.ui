@@ -32,395 +32,6 @@
     <layout class="QGridLayout" name="gridLayout_2">
      <item row="0" column="0">
       <layout class="QGridLayout" name="gridLayout">
-       <item row="8" column="19">
-        <widget class="QLabel" name="label_24">
-         <property name="text">
-          <string>负荷3P</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="15">
-        <widget class="QLabel" name="label_25">
-         <property name="text">
-          <string>负荷2Q</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="15">
-        <widget class="QLineEdit" name="city_current_val"/>
-       </item>
-       <item row="5" column="18" rowspan="5">
-        <widget class="Line" name="line_8">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="20">
-        <widget class="QLineEdit" name="load3_Q_val"/>
-       </item>
-       <item row="9" column="11">
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>负荷1Q</string>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="1">
-        <widget class="QPushButton" name="btn_diesel_on">
-         <property name="text">
-          <string>启动</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="5">
-        <widget class="QLabel" name="label_8">
-         <property name="text">
-          <string>电网Q</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="16">
-        <widget class="Line" name="line_13">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="16" colspan="2">
-        <widget class="QLineEdit" name="load2_P_val"/>
-       </item>
-       <item row="6" column="20">
-        <widget class="QLineEdit" name="load3_current_val"/>
-       </item>
-       <item row="7" column="16" colspan="2">
-        <widget class="QPushButton" name="btn_6KM_off">
-         <property name="text">
-          <string>关</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="19">
-        <widget class="QLabel" name="label_31">
-         <property name="text">
-          <string>测控</string>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="9">
-        <widget class="QPushButton" name="btn_diesel_open">
-         <property name="text">
-          <string>柴充分闸</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="9">
-        <widget class="QLabel" name="diesel_signal_led">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap>image/red_pic.png</pixmap>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="15">
-        <widget class="QLabel" name="label_23">
-         <property name="text">
-          <string>负荷2P</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="17">
-        <widget class="QLabel" name="controller_signal_led">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap>image/red_pic.png</pixmap>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="1">
-        <widget class="QLabel" name="PV_signal_led">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap>image/red_pic.png</pixmap>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="5">
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>电网P</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="5">
-        <widget class="QPushButton" name="btn_9QF_off">
-         <property name="text">
-          <string>关</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <widget class="QPushButton" name="btn_8QF_off">
-         <property name="text">
-          <string>关</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="11">
-        <widget class="QLabel" name="label_18">
-         <property name="text">
-          <string>负荷1电流</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="11">
-        <widget class="QPushButton" name="btn_5KM_on">
-         <property name="text">
-          <string>开</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="3">
-        <widget class="QLabel" name="label_27">
-         <property name="text">
-          <string>光伏</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="19">
-        <widget class="QLabel" name="label_22">
-         <property name="text">
-          <string>负荷3电流</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="9">
-        <widget class="QPushButton" name="btn_2KM_off">
-         <property name="text">
-          <string>关</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="8">
-        <widget class="Line" name="line_11">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="11">
-        <widget class="QLabel" name="label_29">
-         <property name="text">
-          <string>柴发</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="7" colspan="3">
-        <widget class="QLabel" name="label_11">
-         <property name="font">
-          <font>
-           <family>黑体</family>
-           <pointsize>14</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>   3KM光伏接口</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="10" rowspan="5">
-        <widget class="Line" name="line_6">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0">
-        <widget class="QPushButton" name="btn_8QF_on">
-         <property name="text">
-          <string>开</string>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="7">
-        <widget class="QPushButton" name="btn_diesel_close">
-         <property name="text">
-          <string>柴充合闸</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="11">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>负荷1P</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="3">
-        <widget class="QPushButton" name="btn_city_off">
-         <property name="text">
-          <string>关</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="0">
-        <widget class="QLabel" name="label_26">
-         <property name="font">
-          <font>
-           <family>黑体</family>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>通信状态</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="19">
-        <widget class="QPushButton" name="btn_7KM_on">
-         <property name="text">
-          <string>开</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="16" colspan="2">
-        <widget class="QLineEdit" name="load2_Q_val"/>
-       </item>
-       <item row="5" column="2" rowspan="5">
-        <widget class="Line" name="line_4">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="5">
-        <widget class="QLabel" name="PCS_signal_led">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap>image/red_pic.png</pixmap>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="7">
-        <widget class="QLineEdit" name="city_Q_val"/>
-       </item>
-       <item row="6" column="7">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>光伏电流</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="9">
-        <widget class="QLineEdit" name="PV_Q_val"/>
-       </item>
-       <item row="2" column="0" rowspan="2" colspan="21">
-        <widget class="Line" name="line">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="11" colspan="3">
-        <widget class="QLabel" name="label_16">
-         <property name="font">
-          <font>
-           <family>黑体</family>
-           <pointsize>14</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>   5KM负荷1接口</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="9">
-        <widget class="QPushButton" name="btn_3KM_off">
-         <property name="text">
-          <string>关</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="7">
-        <widget class="QLabel" name="label_28">
-         <property name="text">
-          <string>PCS</string>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="0" colspan="21">
-        <widget class="Line" name="line_9">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="20">
-        <widget class="QPushButton" name="btn_7KM_off">
-         <property name="text">
-          <string>关</string>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="3">
-        <widget class="QPushButton" name="btn_diesel_off">
-         <property name="text">
-          <string>停机</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="7">
-        <widget class="QLineEdit" name="city_P_val"/>
-       </item>
-       <item row="6" column="9">
-        <widget class="QLineEdit" name="PV_current_val"/>
-       </item>
-       <item row="7" column="7">
-        <widget class="QPushButton" name="btn_3KM_on">
-         <property name="text">
-          <string>开</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="7">
-        <widget class="QLabel" name="label_14">
-         <property name="text">
-          <string>光伏P</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="4">
-        <widget class="Line" name="line_10">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="5">
-        <widget class="QPushButton" name="btn_diesel_manual">
-         <property name="text">
-          <string>手动</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="20">
-        <widget class="QLineEdit" name="load3_P_val"/>
-       </item>
-       <item row="4" column="0" colspan="21">
-        <widget class="Line" name="line_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
        <item row="5" column="15" colspan="3">
         <widget class="QLabel" name="label_19">
          <property name="font">
@@ -434,91 +45,12 @@
          </property>
         </widget>
        </item>
-       <item row="6" column="16" colspan="2">
-        <widget class="QLineEdit" name="load2_current_val"/>
-       </item>
-       <item row="3" column="5">
-        <widget class="QLabel" name="label_4">
-         <property name="font">
-          <font>
-           <family>黑体</family>
-           <pointsize>14</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>  2KM</string>
+       <item row="11" column="4">
+        <widget class="Line" name="line_10">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
          </property>
         </widget>
-       </item>
-       <item row="1" column="12" colspan="2">
-        <widget class="QLabel" name="label_10">
-         <property name="text">
-          <string>电网电流</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="13">
-        <widget class="QLabel" name="BMS_signal_led">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap>image/red_pic.png</pixmap>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="3" colspan="3">
-        <widget class="QLabel" name="label_13">
-         <property name="font">
-          <font>
-           <family>黑体</family>
-           <pointsize>14</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>   9QF电池接口</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="12" colspan="2">
-        <widget class="QPushButton" name="btn_5KM_off">
-         <property name="text">
-          <string>关</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="7">
-        <widget class="QPushButton" name="btn_2KM_on">
-         <property name="text">
-          <string>开</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="9">
-        <widget class="QLineEdit" name="PV_P_val"/>
-       </item>
-       <item row="0" column="12" colspan="2">
-        <widget class="QLabel" name="label_9">
-         <property name="text">
-          <string>电网电压</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="15">
-        <widget class="QPushButton" name="btn_6KM_on">
-         <property name="text">
-          <string>开</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="12" colspan="2">
-        <widget class="QLineEdit" name="load1_Q_val"/>
-       </item>
-       <item row="6" column="12" colspan="2">
-        <widget class="QLineEdit" name="load1_current_val"/>
-       </item>
-       <item row="8" column="12" colspan="2">
-        <widget class="QLineEdit" name="load1_P_val"/>
        </item>
        <item row="5" column="14" rowspan="5">
         <widget class="Line" name="line_7">
@@ -540,6 +72,129 @@
          </property>
         </widget>
        </item>
+       <item row="0" column="12" colspan="2">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>电网电压</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="16" colspan="2">
+        <widget class="QPushButton" name="btn_6KM_off">
+         <property name="text">
+          <string>关</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="9">
+        <widget class="QLineEdit" name="PV_P_val"/>
+       </item>
+       <item row="11" column="7">
+        <widget class="QLabel" name="label_28">
+         <property name="text">
+          <string>PCS</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="12" colspan="2">
+        <widget class="QLineEdit" name="load1_current_val"/>
+       </item>
+       <item row="5" column="7" colspan="3">
+        <widget class="QLabel" name="label_11">
+         <property name="font">
+          <font>
+           <family>黑体</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>   3KM光伏接口</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="12">
+        <widget class="Line" name="line_12">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="21">
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="18" rowspan="5">
+        <widget class="Line" name="line_8">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="19">
+        <widget class="QLabel" name="label_24">
+         <property name="text">
+          <string>负荷3P</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QPushButton" name="btn_8QF_off">
+         <property name="text">
+          <string>关</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QPushButton" name="btn_city_on">
+         <property name="text">
+          <string>开</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="16" colspan="2">
+        <widget class="QLineEdit" name="load2_P_val"/>
+       </item>
+       <item row="5" column="2" rowspan="5">
+        <widget class="Line" name="line_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="16">
+        <widget class="Line" name="line_13">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="11">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>负荷1P</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1">
+        <widget class="QLabel" name="PV_signal_led">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>image/red_pic.png</pixmap>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>电网P</string>
+         </property>
+        </widget>
+       </item>
        <item row="13" column="0">
         <widget class="QLabel" name="label_17">
          <property name="font">
@@ -553,41 +208,10 @@
          </property>
         </widget>
        </item>
-       <item row="7" column="3">
-        <widget class="QPushButton" name="btn_9QF_on">
+       <item row="6" column="11">
+        <widget class="QLabel" name="label_18">
          <property name="text">
-          <string>开</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="15">
-        <widget class="QLineEdit" name="city_voltage_val"/>
-       </item>
-       <item row="11" column="12">
-        <widget class="Line" name="line_12">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="15">
-        <widget class="QLabel" name="label_30">
-         <property name="text">
-          <string>BMS</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="7">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>光伏Q</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="15">
-        <widget class="QLabel" name="label_21">
-         <property name="text">
-          <string>负荷2电流</string>
+          <string>负荷1电流</string>
          </property>
         </widget>
        </item>
@@ -598,8 +222,18 @@
          </property>
         </widget>
        </item>
-       <item row="5" column="19" colspan="2">
-        <widget class="QLabel" name="label_20">
+       <item row="9" column="9">
+        <widget class="QLineEdit" name="PV_Q_val"/>
+       </item>
+       <item row="1" column="5">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>电网Q</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="5">
+        <widget class="QLabel" name="label_4">
          <property name="font">
           <font>
            <family>黑体</family>
@@ -607,28 +241,82 @@
           </font>
          </property>
          <property name="text">
-          <string>  7KM负荷3接口</string>
+          <string>  2KM</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="3">
-        <widget class="QPushButton" name="btn_city_on">
+       <item row="11" column="0">
+        <widget class="QLabel" name="label_26">
+         <property name="font">
+          <font>
+           <family>黑体</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="text">
-          <string>开</string>
+          <string>通信状态</string>
          </property>
         </widget>
        </item>
-       <item row="10" column="0" colspan="21">
-        <widget class="Line" name="line_2">
+       <item row="9" column="15">
+        <widget class="QLabel" name="label_25">
+         <property name="text">
+          <string>负荷2Q</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="3">
+        <widget class="QLabel" name="label_27">
+         <property name="text">
+          <string>光伏</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="7">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>光伏P</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="7">
+        <widget class="QLineEdit" name="city_P_val"/>
+       </item>
+       <item row="5" column="10" rowspan="5">
+        <widget class="Line" name="line_6">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="20">
+        <widget class="QLineEdit" name="load3_P_val"/>
+       </item>
+       <item row="9" column="11">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>负荷1Q</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0" colspan="21">
+        <widget class="Line" name="line_9">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
-       <item row="5" column="6" rowspan="5">
-        <widget class="Line" name="line_5">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
+       <item row="7" column="15">
+        <widget class="QPushButton" name="btn_6KM_on">
+         <property name="text">
+          <string>开</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="11">
+        <widget class="QLabel" name="label_29">
+         <property name="text">
+          <string>柴发</string>
          </property>
         </widget>
        </item>
@@ -645,102 +333,327 @@
          </property>
         </widget>
        </item>
+       <item row="8" column="12" colspan="2">
+        <widget class="QLineEdit" name="load1_P_val"/>
+       </item>
+       <item row="6" column="20">
+        <widget class="QLineEdit" name="load3_current_val"/>
+       </item>
+       <item row="6" column="15">
+        <widget class="QLabel" name="label_21">
+         <property name="text">
+          <string>负荷2电流</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="19" colspan="2">
+        <widget class="QLabel" name="label_20">
+         <property name="font">
+          <font>
+           <family>黑体</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>  7KM负荷3接口</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="17">
+        <widget class="QLabel" name="controller_signal_led">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>image/red_pic.png</pixmap>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="7">
+        <widget class="QLineEdit" name="city_Q_val"/>
+       </item>
+       <item row="5" column="6" rowspan="5">
+        <widget class="Line" name="line_5">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="7">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>光伏Q</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="12" colspan="2">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>电网电流</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="15">
+        <widget class="QLabel" name="label_30">
+         <property name="text">
+          <string>BMS</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="7">
+        <widget class="QPushButton" name="btn_2KM_on">
+         <property name="text">
+          <string>开</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="16" colspan="2">
+        <widget class="QLineEdit" name="load2_Q_val"/>
+       </item>
+       <item row="7" column="5">
+        <widget class="QPushButton" name="btn_9QF_off">
+         <property name="text">
+          <string>关</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QPushButton" name="btn_8QF_on">
+         <property name="text">
+          <string>开</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="12" colspan="2">
+        <widget class="QLineEdit" name="load1_Q_val"/>
+       </item>
+       <item row="5" column="11" colspan="3">
+        <widget class="QLabel" name="label_16">
+         <property name="font">
+          <font>
+           <family>黑体</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>   5KM负荷1接口</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="5">
+        <widget class="QPushButton" name="btn_diesel_manual">
+         <property name="text">
+          <string>手动</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="20">
+        <widget class="QPushButton" name="btn_7KM_off">
+         <property name="text">
+          <string>关</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="15">
+        <widget class="QLineEdit" name="city_current_val"/>
+       </item>
+       <item row="13" column="3">
+        <widget class="QPushButton" name="btn_diesel_off">
+         <property name="text">
+          <string>停机</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="15">
+        <widget class="QLabel" name="label_23">
+         <property name="text">
+          <string>负荷2P</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="20">
+        <widget class="QLineEdit" name="load3_Q_val"/>
+       </item>
+       <item row="13" column="1">
+        <widget class="QPushButton" name="btn_diesel_on">
+         <property name="text">
+          <string>启动</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="19">
+        <widget class="QLabel" name="label_31">
+         <property name="text">
+          <string>测控</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="9">
+        <widget class="QPushButton" name="btn_diesel_open">
+         <property name="text">
+          <string>柴充分闸</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="19">
+        <widget class="QPushButton" name="btn_7KM_on">
+         <property name="text">
+          <string>开</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0" colspan="21">
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="13">
+        <widget class="QLabel" name="BMS_signal_led">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>image/red_pic.png</pixmap>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="7">
+        <widget class="QPushButton" name="btn_3KM_on">
+         <property name="text">
+          <string>开</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="5">
+        <widget class="QLabel" name="PCS_signal_led">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>image/red_pic.png</pixmap>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="19">
+        <widget class="QLabel" name="label_22">
+         <property name="text">
+          <string>负荷3电流</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="12" colspan="2">
+        <widget class="QPushButton" name="btn_5KM_off">
+         <property name="text">
+          <string>关</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="3">
+        <widget class="QPushButton" name="btn_9QF_on">
+         <property name="text">
+          <string>开</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="11">
+        <widget class="QPushButton" name="btn_5KM_on">
+         <property name="text">
+          <string>开</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="15">
+        <widget class="QLineEdit" name="city_voltage_val"/>
+       </item>
+       <item row="11" column="8">
+        <widget class="Line" name="line_11">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="9">
+        <widget class="QPushButton" name="btn_2KM_off">
+         <property name="text">
+          <string>关</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="7">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>光伏电流</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="9">
+        <widget class="QLabel" name="diesel_signal_led">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>image/red_pic.png</pixmap>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QPushButton" name="btn_city_off">
+         <property name="text">
+          <string>关</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="3" colspan="3">
+        <widget class="QLabel" name="label_13">
+         <property name="font">
+          <font>
+           <family>黑体</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>   9QF电池接口</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="7">
+        <widget class="QPushButton" name="btn_diesel_close">
+         <property name="text">
+          <string>柴充合闸</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="16" colspan="2">
+        <widget class="QLineEdit" name="load2_current_val"/>
+       </item>
+       <item row="7" column="9">
+        <widget class="QPushButton" name="btn_3KM_off">
+         <property name="text">
+          <string>关</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="9">
+        <widget class="QLineEdit" name="PV_current_val"/>
+       </item>
+       <item row="2" column="0" colspan="21">
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
       </layout>
      </item>
     </layout>
-    <zorder>label_15</zorder>
-    <zorder>label</zorder>
-    <zorder>BMS_signal_led</zorder>
-    <zorder>load1_P_val</zorder>
-    <zorder>label_21</zorder>
-    <zorder>label_29</zorder>
-    <zorder>btn_6KM_on</zorder>
-    <zorder>line_3</zorder>
-    <zorder>line</zorder>
-    <zorder>btn_diesel_manual</zorder>
-    <zorder>btn_diesel_open</zorder>
-    <zorder>line_10</zorder>
-    <zorder>btn_3KM_off</zorder>
-    <zorder>label_9</zorder>
-    <zorder>btn_7KM_off</zorder>
-    <zorder>label_30</zorder>
-    <zorder>label_24</zorder>
-    <zorder>label_23</zorder>
-    <zorder>btn_3KM_on</zorder>
-    <zorder>label_6</zorder>
-    <zorder>label_19</zorder>
-    <zorder>label_3</zorder>
-    <zorder>label_5</zorder>
-    <zorder>city_P_val</zorder>
-    <zorder>label_17</zorder>
-    <zorder>btn_diesel_off</zorder>
-    <zorder>line_7</zorder>
-    <zorder>controller_signal_led</zorder>
-    <zorder>btn_6KM_off</zorder>
-    <zorder>load2_Q_val</zorder>
-    <zorder>load3_current_val</zorder>
-    <zorder>btn_8QF_on</zorder>
-    <zorder>line_9</zorder>
-    <zorder>btn_city_off</zorder>
-    <zorder>city_voltage_val</zorder>
-    <zorder>label_28</zorder>
-    <zorder>label_22</zorder>
-    <zorder>label_20</zorder>
-    <zorder>label_10</zorder>
-    <zorder>line_6</zorder>
-    <zorder>PCS_signal_led</zorder>
-    <zorder>label_26</zorder>
-    <zorder>label_12</zorder>
-    <zorder>PV_signal_led</zorder>
-    <zorder>btn_8QF_off</zorder>
-    <zorder>load2_P_val</zorder>
-    <zorder>city_current_val</zorder>
-    <zorder>load3_P_val</zorder>
-    <zorder>line_2</zorder>
-    <zorder>btn_9QF_on</zorder>
-    <zorder>label_4</zorder>
-    <zorder>diesel_signal_led</zorder>
-    <zorder>btn_9QF_off</zorder>
-    <zorder>label_27</zorder>
-    <zorder>label_31</zorder>
-    <zorder>PV_Q_val</zorder>
-    <zorder>load3_Q_val</zorder>
-    <zorder>load2_current_val</zorder>
-    <zorder>PV_current_val</zorder>
-    <zorder>label_18</zorder>
-    <zorder>city_Q_val</zorder>
-    <zorder>btn_diesel_close</zorder>
-    <zorder>label_8</zorder>
-    <zorder>label_25</zorder>
-    <zorder>btn_5KM_on</zorder>
-    <zorder>line_13</zorder>
-    <zorder>btn_2KM_off</zorder>
-    <zorder>load1_Q_val</zorder>
-    <zorder>label_13</zorder>
-    <zorder>btn_7KM_on</zorder>
-    <zorder>btn_5KM_off</zorder>
-    <zorder>label_11</zorder>
-    <zorder>load1_current_val</zorder>
-    <zorder>line_11</zorder>
-    <zorder>PV_P_val</zorder>
-    <zorder>btn_diesel_on</zorder>
-    <zorder>line_8</zorder>
-    <zorder>line_12</zorder>
-    <zorder>btn_city_on</zorder>
-    <zorder>label_7</zorder>
-    <zorder>line_4</zorder>
-    <zorder>line_5</zorder>
-    <zorder>label_14</zorder>
-    <zorder>label_16</zorder>
-    <zorder>label_2</zorder>
-    <zorder>btn_2KM_on</zorder>
-    <zorder></zorder>
    </widget>
    <widget class="QFrame" name="frame_PV">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>520</y>
+      <y>529</y>
       <width>1250</width>
       <height>530</height>
      </rect>
@@ -1036,8 +949,8 @@
    <widget class="QFrame" name="frame_diesel">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>1070</y>
+      <x>0</x>
+      <y>1050</y>
       <width>1250</width>
       <height>530</height>
      </rect>
@@ -1592,8 +1505,8 @@
    <widget class="QFrame" name="frame_battery">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>1590</y>
+      <x>0</x>
+      <y>1580</y>
       <width>1250</width>
       <height>531</height>
      </rect>
