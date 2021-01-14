@@ -420,7 +420,7 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
                 for key in PV_dict:
                     print(PV_dict[key])
                     exec('self.%s.setText("%s")' % (key, PV_dict[key]))
-                # self.PV_VAL_1.setText(PV_dict['PV_VAL_1'])
+    #             # self.PV_VAL_1.setText(PV_dict['PV_VAL_1'])
                 # self.PV_VAL_2.setText(PV_dict['PV_VAL_2'])
                 # self.PV_VAL_3.setText(PV_dict['PV_VAL_3'])
                 # self.PV_VAL_4.setText(PV_dict['PV_VAL_4'])
