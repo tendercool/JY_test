@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
+from PyQt5 import QtCore
 import sys
 import serial_my
 import serial.tools.list_ports
@@ -14,7 +15,7 @@ class Connect_Dialog(QDialog, Ui_con_dialog.Ui_dialog):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-
+        
         self.serial_con = serial_my.my_serial()
         self.tcp_con = tcp_my.tcp_config()
         self.con_state = 0
