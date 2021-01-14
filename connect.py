@@ -18,7 +18,7 @@ class Connect_Dialog(QDialog, Ui_con_dialog.Ui_dialog):
         self.serial_con = serial_my.my_serial()
         self.tcp_con = tcp_my.tcp_config()
         self.con_state = 0
-
+        self.tcp_state = 0
         con = config.MyForm()
         self.comboBox_baudrate.setCurrentText(con.baud)
         self.comboBox_databit.setCurrentText(con.databit)
@@ -35,6 +35,7 @@ class Connect_Dialog(QDialog, Ui_con_dialog.Ui_dialog):
 
     def ip_close(self):
         self.tcp_con.tcp_stop()
+        self.tcp_state = 0
         QMessageBox.information(self,'提示','已断开网络！')
 
     def ip_connect(self):
@@ -42,8 +43,10 @@ class Connect_Dialog(QDialog, Ui_con_dialog.Ui_dialog):
             ip = self.aim_IP.text()
             port = self.aim_port.text()
             self.tcp_con.tcp_confirm(ip,port)
+            self.tcp_state = 1
         else:
             QMessageBox.warning(self,'错误','IP及端口不能为空！')
+            self.tcp_state = 0
 
 
     def get_home_ip(self):
@@ -56,6 +59,7 @@ class Connect_Dialog(QDialog, Ui_con_dialog.Ui_dialog):
         self.serial_con.ser.close()
         QMessageBox.information(self, '提示',
                                 '端口%s连接已关闭！' % self.serial_con.ser.port)
+        self.con_state = 0
 
     def connect_port(self):
         if self.serial_con.ser.isOpen():
@@ -67,6 +71,7 @@ class Connect_Dialog(QDialog, Ui_con_dialog.Ui_dialog):
                 self.comboBox_databit.currentText(),
                 self.comboBox_parity.currentText(),
                 self.comboBox_stopbit.currentText())
+            self.con_state = 1
         
 
     def check_port(self):

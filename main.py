@@ -81,7 +81,6 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
         # self.timer = QTimer()
         # self.timer.start(1000)
         # self.timer.timeout.connect(self.set_btn)
-        
 
         self.actionstart.triggered.connect(self.dia.show)
         self.actioninfor.triggered.connect(self.msg.show)
@@ -112,8 +111,8 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
         self.actionshow_battery.triggered.connect(self.frame_battery_show)
         self.actionclose_battery.triggered.connect(self.frame_battery_hide)
 
-    # def set_btn(self):
-    #     if self.dia.serial_con.ser.isOpen():
+        # def set_btn(self):
+        #     if self.dia.serial_con.ser.isOpen():
         self.btn_2KM_on.setEnabled(True)
         self.btn_2KM_off.setEnabled(False)
         self.btn_3KM_on.setEnabled(True)
@@ -233,10 +232,12 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
                 self.PV_P_val.setText('1000')
                 self.PV_Q_val.setText('500')
 
-                self.PV_VAL_UPDATE()
+                self.timer1 = QTimer()
+                self.timer1.start(500)
+                self.timer1.timeout.connect(self.PV_VAL_UPDATE)
+
             else:
                 pass
-                
 
     def btn_3KM_off_cb(self):
         reply = QMessageBox.question(self, '提示', '是否关闭3KM光伏接口',
@@ -248,6 +249,8 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
             self.PV_current_val.setText('0')
             self.PV_P_val.setText('0')
             self.PV_Q_val.setText('0')
+
+            self.timer1.stop()
         else:
             pass
 
@@ -351,6 +354,10 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
             self.btn_8QF_on.setEnabled(False)
             self.btn_8QF_off.setEnabled(True)
             self.diesel_signal_led.setPixmap(QPixmap('image/green_pic.png'))
+
+            self.timer2 = QTimer()
+            self.timer2.start(500)
+            self.timer2.timeout.connect(self.DIESEL_VAL_UPDATE)
         else:
             pass
 
@@ -361,6 +368,7 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
             self.btn_8QF_on.setEnabled(True)
             self.btn_8QF_off.setEnabled(False)
             self.diesel_signal_led.setPixmap(QPixmap('image/red_pic.png'))
+            self.timer2.stop()
         else:
             pass
 
@@ -371,6 +379,10 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
             self.btn_9QF_on.setEnabled(False)
             self.btn_9QF_off.setEnabled(True)
             self.BMS_signal_led.setPixmap(QPixmap('image/green_pic.png'))
+
+            self.timer3 = QTimer()
+            self.timer3.start(500)
+            self.timer3.timeout.connect(self.BMS_VAL_UPDATE)
         else:
             pass
 
@@ -381,6 +393,8 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
             self.btn_9QF_on.setEnabled(True)
             self.btn_9QF_off.setEnabled(False)
             self.BMS_signal_led.setPixmap(QPixmap('image/red_pic.png'))
+
+            self.timer3.stop()
         else:
             pass
 
@@ -409,21 +423,51 @@ class main_window(QMainWindow, Ui_main.Ui_MainWindow, Ui_con_dialog.Ui_dialog):
             self.city_Q_val.setText('0')
         else:
             pass
-  #-------------------------------简单队列测试----------------------
-  #----暂无问题，根据接收报文生成队列，切片，与参数值队列组成字典，顺序赋值。后续考虑以exec函数处理，eval计算字符串
+
+#-------------------------------简单队列测试----------------------
+#----暂无问题，根据接收报文生成队列，切片，与参数值队列组成字典，顺序赋值。后续考虑以exec函数处理，eval计算字符串
+
     def PV_VAL_UPDATE(self):
-        if self.dia.serial_con.ser.isOpen():
-            rec_msg = ['11','EF','CC','AF','AD','12','24','25','99']
+        if self.dia.con_state == 1:
+            rec_msg = ['11', 'EF', 'CC', 'AF', 'AD', '12', '24', '25', '99']
             if rec_msg != '':
-                PV_dict = dict(zip(self.PV_VAL,rec_msg))
-                
+                PV_dict = dict(zip(self.PV_VAL, rec_msg))
                 for key in PV_dict:
                     print(PV_dict[key])
                     exec('self.%s.setText("%s")' % (key, PV_dict[key]))
-    #             # self.PV_VAL_1.setText(PV_dict['PV_VAL_1'])
-                # self.PV_VAL_2.setText(PV_dict['PV_VAL_2'])
-                # self.PV_VAL_3.setText(PV_dict['PV_VAL_3'])
-                # self.PV_VAL_4.setText(PV_dict['PV_VAL_4'])
+        elif self.dia.tcp_state ==  1:
+            rec_data = self.dia.tcp_con.tcp_get_msg()
+            if rec_data != '':
+                PV_dict = dict(zip(self.PV_VAL, rec_msg))
+                for key in PV_dict:
+                    print(PV_dict[key])
+                    exec('self.%s.setText("%s")' % (key, PV_dict[key]))
+
+    def DIESEL_VAL_UPDATE(self):
+        if self.dia.serial_con.ser.isOpen():
+            rec_msg = [
+                '11', 'EF', 'CC', 'AF', 'AD', '12', '24', '25', '99', 'EF',
+                'CC', 'AF', 'AD', '12', '24', '25', '99', 'EF', 'CC', 'AF',
+                'AD', '12', '24', '25', '99'
+            ]
+            if rec_msg != '':
+                DIESEL_dict = dict(zip(self.DIESEL_VAL, rec_msg))
+                for key in DIESEL_dict:
+                    print(DIESEL_dict[key])
+                    exec('self.%s.setText("%s")' % (key, DIESEL_dict[key]))
+
+    def BMS_VAL_UPDATE(self):
+        if self.dia.serial_con.ser.isOpen():
+            rec_msg = [
+                '11', 'EF', 'CC', 'AF', 'AD', '12', '24', '25', '99', 'EF',
+                'CC', 'AF', 'AD', '12', '24', '25', '99', 'EF', 'CC', 'AF',
+                'AD', '12', '24', '25', '99', '25', '99', 'EF'
+            ]
+            if rec_msg != '':
+                BMS_dict = dict(zip(self.BMS_VAL, rec_msg))
+                for key in BMS_dict:
+                    print(BMS_dict[key])
+                    exec('self.%s.setText("%s")' % (key, BMS_dict[key]))
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

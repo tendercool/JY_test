@@ -50,10 +50,12 @@ class tcp_config(QWidget):
                 # self.signal_write_msg.emit(msg)
                 self.tcp_socket.connect(address)
                 QMessageBox.information(self,'提示','正在连接目标服务器！')
+                
             except Exception as ret:
                 # msg = '无法连接目标服务器\n'
                 # self.signal_write_msg.emit(msg)
                 QMessageBox.warning(self,'错误','无法连接目标服务器!')
+                
             else:
                 # msg = 'TCP客户端已连接IP:%s端口:%s\n' % address
                 # self.signal_write_msg.emit(msg)
